@@ -38,7 +38,7 @@ The methods are grouped into three categories:
 
 ---
 
-## 📊 Key Findings
+## Key Findings
 
 - **No "one-size-fits-all"** algorithm — performance is highly dependent on the nature of the anomalies
 - **Simplicity wins** for point anomalies: Holt-Winters and Isolation Forest proved exceptionally stable
@@ -48,7 +48,7 @@ The methods are grouped into three categories:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Libraries |
 |---|---|
