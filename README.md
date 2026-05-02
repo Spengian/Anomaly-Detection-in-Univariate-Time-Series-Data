@@ -1,74 +1,59 @@
-# 📈 Anomaly Detection in Univariate Time Series  
-**Combining Theoretical Foundations with Practical Applications**
+# Anomaly Detection in Univariate Time Series
 
-## 🧠 Overview  
-This project explores the detection of anomalies in univariate time series data by combining classical statistical approaches, machine learning algorithms, and deep learning architectures. It bridges rigorous theoretical underpinnings with hands-on implementations for applications in domains such as economics, industrial systems, and cybersecurity.
+My undergraduate thesis at the National Technical University of Athens (NTUA), where I implemented 
+and compared a range of anomaly detection algorithms on real-world time series data.
 
----
-
-## 📚 Theoretical Framework
-
-### 🔍 Anomaly Types
-- **Point anomalies**  
-- **Contextual anomalies**  
-- **Collective anomalies**
-
-### ⏳ Time Series Fundamentals
-- Temporal patterns  
-- Stationarity  
-- Autocorrelation  
-- Stochastic processes
+I chose this topic because it sits at the intersection of statistics and machine learning — two areas 
+I genuinely enjoy — and has practical applications across many fields, from infrastructure monitoring 
+to financial systems.
 
 ---
 
-## 🛠️ Methodology
+## What this covers
 
-### 📊 Statistical Methods
-- Linear Regressor  
-- Holt-Winters Exponential Smoothing  
-- SARIMA  
-> These methods leverage structural assumptions of time series data.
+The goal was to benchmark algorithms across different anomaly types (point, collective, contextual, 
+and change-point shifts), rather than just picking one method and calling it a day.
 
-### 🤖 Machine Learning Techniques
-- Isolation Forest  
-- Local Outlier Factor (LOF)  
-- One-Class SVM  
-- DBSCAN  
-- Matrix Profile  
-- XGBoost
+The methods are grouped into three categories:
 
-### 🧠 Deep Learning Models
-- Multilayer Perceptrons (MLPs)  
-- Long Short-Term Memory (LSTMs)  
-- Autoencoders  
-> These models learn complex, non-linear patterns directly from temporal data.
+- **Statistical:** SARIMA, Holt-Winters Exponential Smoothing, Linear Models
+- **Machine Learning:** Isolation Forest, LOF, OC-SVM, DBSCAN, Matrix Profile, XGBoost
+- **Deep Learning:** MLP, LSTM, Autoencoders
 
 ---
 
-## ⚙️ Implementation
+## Datasets
 
-### 🧹 Data Preprocessing
-- Normalization / Standardization  
-- Temporal feature engineering
-
-### 🔧 Model Optimization
-- Time Series Cross-Validation (TSCV)  
-- Grid search for hyperparameter tuning
+- **Yahoo Webscope S5 (A1 Benchmark)** — stationary and non-stationary series with various anomaly types
+- **NAB NYC Taxi** — taxi demand in New York City, with complex seasonality and window-based anomalies
 
 ---
 
-## 📈 Evaluation
+## Methodology
 
-### 🗂️ Datasets
-- **Yahoo Webscope S5 (A1 subset)**: Diverse anomaly types  
-- **NYC Taxi (NAB benchmark)**: Urban mobility anomaly detection
-
-### 📏 Metrics
-- **Standard metrics**: Precision, Recall, F1-score  
-- **Domain-specific**: NAB score (accounts for early/late detection)
+- Data preprocessing: standardization, normalization, linear detrending
+- Temporal feature engineering to improve non-sequential ML models
+- Hyperparameter tuning via Time Series Cross-Validation and Grid Search
+- Comparison of static vs. dynamic thresholding strategies
 
 ---
 
-## 🧩 Key Contributions
-- Comparative analysis of **10+ algorithms** from statistical, ML, and DL categories  
-- Actionable insights for real-world deployment in **industrial monitoring systems**
+## 📊 Key Findings
+
+- **No "one-size-fits-all"** algorithm — performance is highly dependent on the nature of the anomalies
+- **Simplicity wins** for point anomalies: Holt-Winters and Isolation Forest proved exceptionally stable
+- **Dynamic thresholds** and temporal feature engineering were essential for detecting mean-shift anomalies
+- **Deep learning** (Autoencoders, LSTMs) showed competitive advantages in complex, adaptive scenarios
+- **NAB Score** evaluation highlighted the importance of timing and precision over mere anomaly coverage
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Libraries |
+|---|---|
+| **Language** | [Python](https://www.python.org/) |
+| **Core** | [NumPy](https://numpy.org/) · [Pandas](https://pandas.pydata.org/) |
+| **ML / DL** | [Scikit-learn](https://scikit-learn.org/) · [TensorFlow/Keras](https://www.tensorflow.org/) · [XGBoost](https://xgboost.readthedocs.io/) |
+| **Time Series** | [StatsModels](https://www.statsmodels.org/) · [Stumpy](https://stumpy.readthedocs.io/) |
+| **Visualization** | [Matplotlib](https://matplotlib.org/) · [Seaborn](https://seaborn.pydata.org/) |
